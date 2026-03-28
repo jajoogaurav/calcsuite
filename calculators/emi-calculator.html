@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EMI Calculator India 2026 – Car, Home, Personal & Bike Loan EMI</title>
+  <meta name="description" content="Free EMI calculator for car loan, home loan, personal loan & bike loan. Calculate monthly EMI, total interest, amortization schedule. Compare loan types instantly.">
+  <meta name="keywords" content="EMI calculator India, car loan EMI calculator, home loan EMI calculator, personal loan EMI calculator, bike loan EMI calculator, education loan EMI calculator, loan emi calculator with amortization schedule, emi calculator india with prepayment">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://calcsuite.in/calculators/emi-calculator.html">
+  <link rel="stylesheet" href="../css/styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','GA_MEASUREMENT_ID');</script>
+
+  <!-- WebPage + BreadcrumbList Schema -->
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebPage","name":"EMI Calculator India 2026 – Car, Home, Personal & Bike Loan","description":"Free EMI calculator for all loan types in India. Calculate monthly EMI, interest, and amortization schedule.","url":"https://calcsuite.in/calculators/emi-calculator.html","isPartOf":{"@type":"WebSite","name":"CalcSuite","url":"https://calcsuite.in/"},"breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://calcsuite.in/"},{"@type":"ListItem","position":2,"name":"EMI Calculator","item":"https://calcsuite.in/calculators/emi-calculator.html"}]}}
+  </script>
+
+  <!-- FAQPage Schema — multi-keyword -->
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"What is car loan EMI?","acceptedAnswer":{"@type":"Answer","text":"Car loan EMI is the fixed monthly installment you pay to repay your car loan. It includes both principal and interest. Car loan interest rates in India typically range from 7% to 12% per annum, with tenures of 1 to 7 years. Use our car loan EMI calculator to find your exact EMI."}},
+    {"@type":"Question","name":"How is home loan EMI calculated?","acceptedAnswer":{"@type":"Answer","text":"Home loan EMI is calculated using the formula: EMI = P × r × (1+r)^n / ((1+r)^n – 1), where P is the loan amount, r is the monthly interest rate, and n is the number of months. Home loans in India typically have rates from 8% to 10% with tenures up to 30 years."}},
+    {"@type":"Question","name":"What is personal loan EMI?","acceptedAnswer":{"@type":"Answer","text":"Personal loan EMI is the monthly payment for repaying an unsecured personal loan. Interest rates for personal loans in India are higher (10% to 24%) because they are unsecured. Tenures usually range from 1 to 5 years. Our calculator helps you compare different scenarios."}},
+    {"@type":"Question","name":"Which loan type has the lowest EMI?","acceptedAnswer":{"@type":"Answer","text":"Home loans generally have the lowest EMI because they offer the longest tenure (up to 30 years) and lowest interest rates (8-10%). Car loans have moderate EMIs (7-12%, 1-7 years). Personal loans have the highest EMI due to higher rates (10-24%) and shorter tenures (1-5 years). Use our Compare Loan Types feature to see exact numbers."}},
+    {"@type":"Question","name":"Can I reduce my EMI by prepayment?","acceptedAnswer":{"@type":"Answer","text":"Yes, making prepayments reduces your outstanding principal, which can lower your EMI or shorten your loan tenure. For floating-rate home loans in India, there is no prepayment penalty as per RBI guidelines. Our early loan closure feature shows exactly how much you can save."}},
+    {"@type":"Question","name":"What is bike loan EMI?","acceptedAnswer":{"@type":"Answer","text":"Bike loan EMI is the monthly installment for a two-wheeler loan. Bike loans in India typically have interest rates of 8% to 15%, with tenures of 1 to 5 years and loan amounts from ₹30,000 to ₹5,00,000. Use our bike loan EMI calculator to plan your purchase."}},
+    {"@type":"Question","name":"How accurate is this EMI calculator?","acceptedAnswer":{"@type":"Answer","text":"Our EMI calculator uses the exact mathematical formula used by all banks and NBFCs in India — SBI, HDFC, ICICI, Axis, Bajaj Finance, and others. Results are verified through 64 automated test cases to ensure accuracy to the last rupee."}}
+  ]}
+  </script>
+
+  <style>
+    .tooltip-icon{display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;border-radius:50%;background:rgba(99,102,241,0.15);color:var(--accent-primary-light);font-size:0.7rem;font-weight:700;cursor:help;margin-left:6px;position:relative;user-select:none}
+    .tooltip-icon .tooltip-text{visibility:hidden;opacity:0;position:absolute;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%);background:#1e2642;border:1px solid var(--border-color);border-radius:8px;padding:10px 14px;font-size:0.78rem;font-weight:400;color:var(--text-secondary);white-space:normal;width:240px;z-index:50;box-shadow:var(--shadow-md);transition:opacity 0.2s ease;line-height:1.5;pointer-events:none}
+    .tooltip-icon .tooltip-text::after{content:'';position:absolute;top:100%;left:50%;transform:translateX(-50%);border:6px solid transparent;border-top-color:#1e2642}
+    .tooltip-icon:hover .tooltip-text{visibility:visible;opacity:1}
+    .interest-saved-banner{background:linear-gradient(135deg,rgba(16,185,129,0.1),rgba(6,182,212,0.1));border:1px solid rgba(16,185,129,0.3);border-radius:var(--radius-lg);padding:1.25rem 1.75rem;margin-bottom:2rem;display:none;align-items:center;gap:1rem;animation:fadeInUp 0.4s ease}
+    .interest-saved-banner.visible{display:flex}
+    .interest-saved-banner .saved-icon{width:48px;height:48px;border-radius:50%;background:rgba(16,185,129,0.15);display:flex;align-items:center;justify-content:center;font-size:1.5rem;flex-shrink:0}
+    .interest-saved-banner .saved-amount{font-size:1.5rem;font-weight:700;color:var(--accent-green);line-height:1.2}
+    .interest-saved-banner .saved-label{font-size:0.85rem;color:var(--text-secondary);margin-top:2px}
+    .comparison-section{background:var(--gradient-card);border:1px solid var(--border-color);border-radius:var(--radius-lg);padding:2rem;margin-bottom:2rem}
+    .comparison-section h2{font-size:1.2rem;font-weight:600;margin-bottom:1.25rem}
+    .comparison-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+    .comparison-card{background:var(--bg-input);border-radius:var(--radius-md);padding:1.5rem;overflow:hidden}
+    .comparison-card.original{border-left:3px solid var(--accent-primary)}
+    .comparison-card.reduced{border-left:3px solid var(--accent-green)}
+    .comparison-card .card-tag{display:inline-block;padding:3px 10px;border-radius:4px;font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:1rem}
+    .comparison-card.original .card-tag{background:rgba(99,102,241,0.15);color:var(--accent-primary-light)}
+    .comparison-card.reduced .card-tag{background:rgba(16,185,129,0.15);color:var(--accent-green)}
+    .comparison-row{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid rgba(42,51,82,0.4)}
+    .comparison-row:last-child{border-bottom:none}
+    .comparison-row .comp-label{font-size:0.82rem;color:var(--text-secondary)}
+    .comparison-row .comp-value{font-size:0.95rem;font-weight:600}
+    .bar-chart-section{background:var(--gradient-card);border:1px solid var(--border-color);border-radius:var(--radius-lg);padding:2rem;margin-bottom:2rem}
+    .bar-chart-section h2{font-size:1.2rem;font-weight:600;margin-bottom:1rem}
+    .bar-chart-container{position:relative;height:350px}
+    .download-bar{display:flex;gap:0.75rem;flex-wrap:wrap;margin-bottom:1.25rem}
+
+    /* Loan Type Selector */
+    .loan-type-bar{display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:2rem}
+    .loan-type-btn{padding:10px 20px;border-radius:var(--radius-sm);background:var(--bg-input);border:1px solid var(--border-color);color:var(--text-secondary);font-family:'Inter',sans-serif;font-weight:500;font-size:0.85rem;cursor:pointer;transition:var(--transition)}
+    .loan-type-btn:hover{border-color:var(--accent-primary);color:var(--accent-primary-light)}
+    .loan-type-btn.active{background:var(--gradient-primary);color:#fff;border-color:transparent}
+
+    /* Loan Compare Table */
+    .loan-compare-section{background:var(--gradient-card);border:1px solid var(--border-color);border-radius:var(--radius-lg);padding:2rem;margin-bottom:2rem}
+    .loan-compare-section h2{font-size:1.2rem;font-weight:600;margin-bottom:1rem}
+    .loan-compare-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1rem}
+    .loan-compare-card{background:var(--bg-input);border-radius:var(--radius-md);padding:1.25rem;border-top:3px solid var(--accent-primary)}
+    .loan-compare-card h3{font-size:0.95rem;font-weight:600;margin-bottom:0.75rem}
+    .loan-compare-card .compare-row{display:flex;justify-content:space-between;padding:6px 0;font-size:0.82rem;color:var(--text-secondary);border-bottom:1px solid rgba(42,51,82,0.3)}
+    .loan-compare-card .compare-row:last-child{border-bottom:none}
+    .loan-compare-card .compare-val{font-weight:600;color:var(--text-primary)}
+
+    /* Loan type content anchors */
+    .loan-content-block{scroll-margin-top:80px}
+
+    @media(max-width:768px){.comparison-grid{grid-template-columns:1fr}.bar-chart-container{height:280px}.interest-saved-banner{flex-direction:column;text-align:center}.loan-type-bar{justify-content:center}}
+  </style>
+</head>
+<body>
+
+  <main class="calculator-page">
+    <article>
+      <h1 id="mainHeading">EMI Calculator India – Calculate Loan EMI Online</h1>
+      <p class="subtitle" id="mainSubtitle">Calculate your Equated Monthly Installment for car loan, home loan, personal loan, or bike loan. Compare tenures, view amortization schedule, and download reports — all for free.</p>
+
+      <div class="share-btn-container" id="shareButtons"></div>
+
+      <!-- Loan Type Selector -->
+      <nav class="loan-type-bar" aria-label="Select loan type">
+        <button class="loan-type-btn active" data-type="home" onclick="switchLoanType('home')">🏠 Home Loan</button>
+        <button class="loan-type-btn" data-type="car" onclick="switchLoanType('car')">🚗 Car Loan</button>
+        <button class="loan-type-btn" data-type="personal" onclick="switchLoanType('personal')">💳 Personal Loan</button>
+        <button class="loan-type-btn" data-type="bike" onclick="switchLoanType('bike')">🏍️ Bike Loan</button>
+        <button class="loan-type-btn" data-type="education" onclick="switchLoanType('education')">🎓 Education Loan</button>
+      </nav>
+
+      <section class="calc-layout" aria-label="EMI Calculator inputs and results">
+        <div class="input-panel">
+          <div class="input-group">
+            <div class="input-label">
+              <label for="loanAmountInput">Loan Amount (₹)<span class="tooltip-icon">?<span class="tooltip-text" id="tooltipLoanAmt">The total loan amount you wish to borrow. This is the principal before interest.</span></span></label>
+              <input type="number" id="loanAmountInput" value="5000000" min="10000" max="100000000" step="10000">
+            </div>
+            <input type="range" id="loanAmountSlider" min="10000" max="100000000" value="5000000" step="10000">
+          </div>
+          <div class="input-group">
+            <div class="input-label">
+              <label for="interestRateInput">Interest Rate (% p.a.)<span class="tooltip-icon">?<span class="tooltip-text" id="tooltipRate">Annual interest rate charged by the lender.</span></span></label>
+              <input type="number" id="interestRateInput" value="8.5" min="1" max="30" step="0.1">
+            </div>
+            <input type="range" id="interestRateSlider" min="1" max="30" value="8.5" step="0.1">
+          </div>
+          <div class="input-group">
+            <div class="input-label">
+              <label for="tenureInput">Loan Tenure<span class="tooltip-icon">?<span class="tooltip-text" id="tooltipTenure">Duration to repay the loan. Longer tenure = lower EMI but more total interest.</span></span></label>
+              <input type="number" id="tenureInput" value="20" min="1" max="30" step="1">
+            </div>
+            <input type="range" id="tenureSlider" min="1" max="30" value="20" step="1">
+            <div class="toggle-group">
+              <button class="toggle-btn active" id="tenureYears" data-unit="years">Years</button>
+              <button class="toggle-btn" id="tenureMonths" data-unit="months">Months</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="result-panel">
+          <div class="result-item"><div class="result-label">Monthly EMI</div><div class="result-value highlight" id="monthlyEMI">₹0</div></div>
+          <div class="result-item"><div class="result-label">Total Interest Payable</div><div class="result-value" id="totalInterest" style="color:var(--accent-orange)">₹0</div></div>
+          <div class="result-item"><div class="result-label">Total Amount Payable</div><div class="result-value" id="totalAmount" style="color:var(--accent-green)">₹0</div></div>
+          <div class="chart-container"><canvas id="emiChart"></canvas></div>
+        </div>
+      </section>
+
+      <!-- Interest Saved Banner -->
+      <div class="interest-saved-banner" id="interestSavedBanner">
+        <div class="saved-icon">💰</div>
+        <div><div class="saved-amount" id="savedAmountText">₹0</div><div class="saved-label" id="savedLabelText">Interest saved by choosing a shorter tenure</div></div>
+      </div>
+
+      <!-- Early Loan Closure -->
+      <section class="early-closure" aria-label="Early loan closure comparison">
+        <div class="early-closure-header">
+          <h2>⚡ Early Loan Closure</h2>
+          <label class="switch-label">Enable <div class="switch"><input type="checkbox" id="earlyClosureToggle"><span class="switch-slider"></span></div></label>
+        </div>
+        <div class="early-closure-content" id="earlyClosureContent">
+          <div class="input-group">
+            <div class="input-label">
+              <label for="earlyTenureInput">Desired Tenure<span class="tooltip-icon">?<span class="tooltip-text">Enter a shorter tenure to see how much interest you save by closing the loan early.</span></span></label>
+              <input type="number" id="earlyTenureInput" value="15" min="1" max="29" step="1">
+            </div>
+            <input type="range" id="earlyTenureSlider" min="1" max="29" value="15" step="1">
+          </div>
+          <div class="early-results" id="earlyResults"></div>
+        </div>
+      </section>
+
+      <!-- Tenure Comparison -->
+      <section class="comparison-section" id="comparisonSection" style="display:none" aria-label="Tenure comparison">
+        <h2>📊 Tenure Comparison — Side by Side</h2>
+        <div class="comparison-grid" id="comparisonGrid"></div>
+      </section>
+
+      <!-- Compare Loan Types -->
+      <section class="loan-compare-section" aria-label="Compare loan types">
+        <h2>🔄 Compare Loan Types — EMI at a Glance</h2>
+        <div class="loan-compare-grid" id="loanCompareGrid"></div>
+      </section>
+
+      <div class="ad-placeholder">📢 Advertisement Space — Google AdSense</div>
+
+      <!-- Stacked Bar Chart -->
+      <section class="bar-chart-section" aria-label="Principal vs Interest chart">
+        <h2>📈 Principal vs Interest Over Time</h2>
+        <div class="bar-chart-container"><canvas id="barChart"></canvas></div>
+      </section>
+
+      <!-- Amortization Table -->
+      <section class="amort-section" aria-label="Amortization schedule">
+        <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-bottom:1.25rem">
+          <h2 style="margin:0">Amortization Schedule</h2>
+          <div class="download-bar">
+            <button class="btn btn-outline" onclick="downloadCSV('yearly')" id="dlYearlyCSV">📥 Yearly CSV</button>
+            <button class="btn btn-outline" onclick="downloadCSV('monthly')" id="dlMonthlyCSV">📥 Monthly CSV</button>
+          </div>
+        </div>
+        <div class="table-tabs">
+          <button class="table-tab active" id="tabYearly" onclick="showAmortTab('yearly')">Yearly Summary</button>
+          <button class="table-tab" id="tabMonthly" onclick="showAmortTab('monthly')">Monthly Breakdown</button>
+        </div>
+        <div class="table-wrapper" id="yearlyTable"></div>
+        <div class="table-wrapper" id="monthlyTable" style="display:none"></div>
+      </section>
+
+      <!-- ========== LOAN-TYPE SEO CONTENT SECTIONS ========== -->
+
+      <section class="seo-content loan-content-block" id="home-loan" aria-label="Home loan EMI information">
+        <h2>Home Loan EMI Calculator – Plan Your Dream Home Purchase</h2>
+        <p>A <strong>home loan EMI calculator</strong> helps you estimate the monthly installment for purchasing a house or flat. Home loans in India are offered by banks like <strong>SBI, HDFC, ICICI, Axis, PNB, and Bank of Baroda</strong> at competitive interest rates.</p>
+        <h3>Home Loan Interest Rates in India (2026)</h3>
+        <p>Home loan interest rates in India currently range from <strong>8.25% to 9.50%</strong> for salaried individuals. Senior borrowers and women applicants often get an additional discount of 0.05–0.10%. Tenures can extend up to <strong>30 years</strong>, making EMIs affordable even for larger loans.</p>
+        <h3>Benefits of Using Home Loan EMI Calculator</h3>
+        <ul>
+          <li>Compare home loan offers from <strong>SBI, HDFC, ICICI</strong> by adjusting the interest rate</li>
+          <li>Plan your budget — know exactly how much EMI you'll pay each month</li>
+          <li>See how <strong>prepayment saves lakhs</strong> in interest over the loan tenure</li>
+          <li>View year-wise amortization to track principal vs interest breakdown</li>
+          <li>Claim <strong>tax benefits under Section 80C</strong> (principal) and <strong>Section 24(b)</strong> (interest)</li>
+        </ul>
+        <p>For a ₹50 lakh home loan at 8.5% for 20 years, your EMI would be approximately <strong>₹43,391</strong> with total interest of around ₹54.14 lakhs. Use the early closure feature to see how you can save significantly. Also try our <a href="loan-prepayment-calculator.html">Loan Prepayment Calculator</a> for detailed analysis.</p>
+      </section>
+
+      <section class="seo-content loan-content-block" id="car-loan" aria-label="Car loan EMI information">
+        <h2>Car Loan EMI Calculator – Finance Your New or Used Car</h2>
+        <p>Planning to buy a car? Our <strong>car loan EMI calculator</strong> helps you estimate monthly payments before visiting the dealership. Whether you're buying a <strong>Maruti, Hyundai, Tata, Honda, or a luxury car</strong>, our calculator gives you accurate EMI figures in seconds.</p>
+        <h3>Car Loan Interest Rates in India (2026)</h3>
+        <p>Car loan interest rates in India range from <strong>7.25% to 12%</strong> depending on the bank, car type (new vs used), and your credit score. New car loans typically have lower rates (7.25–9.5%) while used car loans are higher (10–14%). Common tenures are <strong>1 to 7 years</strong>.</p>
+        <h3>Who Offers the Best Car Loan Rates?</h3>
+        <ul>
+          <li><strong>SBI</strong> — starting from 8.65% for new cars</li>
+          <li><strong>HDFC Bank</strong> — from 8.75% with flexible tenures</li>
+          <li><strong>ICICI Bank</strong> — competitive rates with instant approval</li>
+          <li><strong>Bank of Baroda</strong> — one of the lowest rates for salaried employees</li>
+          <li><strong>Bajaj Finance</strong> — quick processing, higher interest for used cars</li>
+        </ul>
+        <p>For a ₹8 lakh car loan at 9% for 5 years, your EMI would be approximately <strong>₹16,607</strong>. <a href="#home-loan">Calculate your home loan EMI</a> or check the <a href="sip-calculator.html">SIP Calculator</a> to invest your savings.</p>
+      </section>
+
+      <section class="seo-content loan-content-block" id="personal-loan" aria-label="Personal loan EMI information">
+        <h2>Personal Loan EMI Calculator – Quick Unsecured Loan Planning</h2>
+        <p>A <strong>personal loan EMI calculator</strong> helps you plan repayments for unsecured loans used for weddings, travel, medical expenses, or debt consolidation. Personal loans don't require collateral, but they come with higher interest rates.</p>
+        <h3>Personal Loan Interest Rates in India (2026)</h3>
+        <p>Personal loan interest rates range from <strong>10.49% to 24%</strong> depending on your CIBIL score, income, employer category, and the lender. Top-tier salaried employees with 750+ CIBIL scores can get rates as low as 10.49%. Tenures typically range from <strong>1 to 5 years</strong>.</p>
+        <h3>Why Use Personal Loan EMI Calculator?</h3>
+        <ul>
+          <li>Determine if the EMI fits your monthly budget before applying</li>
+          <li>Compare rates across <strong>HDFC, ICICI, SBI, Bajaj Finance, Tata Capital</strong></li>
+          <li>See total interest cost — personal loans can be expensive over long tenures</li>
+          <li>Plan early repayment to save on interest</li>
+        </ul>
+        <p>For a ₹5 lakh personal loan at 14% for 3 years, your EMI would be approximately <strong>₹17,094</strong> with total interest of ₹1.15 lakhs. Consider whether <a href="#home-loan">a secured loan</a> with lower rates might be a better option for large amounts.</p>
+      </section>
+
+      <section class="seo-content loan-content-block" id="bike-loan" aria-label="Bike loan EMI information">
+        <h2>Bike Loan EMI Calculator – Two-Wheeler Loan Planning</h2>
+        <p>Buying a <strong>Royal Enfield, Honda, TVS, Bajaj, or Hero</strong> on EMI? Our <strong>bike loan EMI calculator</strong> helps you plan the monthly installment for your two-wheeler purchase. Two-wheeler loans are available from banks and NBFCs with minimal documentation.</p>
+        <h3>Bike Loan Interest Rates in India (2026)</h3>
+        <p>Bike loan interest rates typically range from <strong>8% to 15%</strong>, with loan amounts from ₹30,000 to ₹5,00,000. Tenures range from <strong>1 to 5 years</strong>. Banks like HDFC, ICICI, and Bajaj Finance offer competitive two-wheeler loan rates.</p>
+        <h3>Bike Loan Key Features</h3>
+        <ul>
+          <li><strong>Quick approval</strong> — many lenders offer instant 2-wheeler loan approval</li>
+          <li><strong>Minimal documentation</strong> — Aadhaar, PAN, income proof</li>
+          <li><strong>Down payment</strong> — typically 10–20% of the bike's on-road price</li>
+          <li>EMI from as low as ₹1,500 for budget bikes</li>
+        </ul>
+        <p>For a ₹1.5 lakh bike loan at 10% for 3 years, your EMI would be approximately <strong>₹4,840</strong>. <a href="#car-loan">Check car loan EMI</a> if you're considering a four-wheeler instead.</p>
+      </section>
+
+      <section class="seo-content loan-content-block" id="education-loan" aria-label="Education loan EMI information">
+        <h2>Education Loan EMI Calculator – Plan Your Study Abroad or India Education</h2>
+        <p>An <strong>education loan EMI calculator</strong> helps students and parents plan the repayment of education loans taken for undergraduate, postgraduate, or study abroad programs. Education loans in India have special features like moratorium periods.</p>
+        <h3>Education Loan Interest Rates in India (2026)</h3>
+        <p>Education loan interest rates range from <strong>8% to 13%</strong>. Government banks like SBI and Bank of Baroda offer lower rates (8–9.5%), while private banks and NBFCs charge 10–13%. Key features include:</p>
+        <ul>
+          <li><strong>Moratorium period</strong> — EMI payment starts after course completion + 6–12 months</li>
+          <li><strong>Tax benefit</strong> — full interest deduction under Section 80E (no limit)</li>
+          <li>Loans up to ₹7.5 lakh without collateral; higher amounts need collateral</li>
+          <li>Government interest subsidy under Vidyalakshmi scheme for economically weaker sections</li>
+        </ul>
+        <p>For a ₹10 lakh education loan at 9% for 7 years, your EMI after moratorium would be approximately <strong>₹16,089</strong>. Planning investments for the future? Check our <a href="sip-calculator.html">SIP Calculator</a> or <a href="fd-calculator.html">FD Calculator</a>.</p>
+      </section>
+
+      <!-- FAQ Section -->
+      <section class="faq-section" aria-label="Frequently asked questions about EMI">
+        <h2>Frequently Asked Questions – EMI Calculator</h2>
+        <div class="faq-item"><div class="faq-question" onclick="this.parentElement.classList.toggle('open')">What is car loan EMI?</div><div class="faq-answer">Car loan EMI is the fixed monthly amount you pay to repay your car loan. It includes both principal and interest. For example, an ₹8 lakh car loan at 9% for 5 years has an EMI of about ₹16,607. Interest rates range from 7–12% in India depending on the bank, car model, and whether it's new or used.</div></div>
+        <div class="faq-item"><div class="faq-question" onclick="this.parentElement.classList.toggle('open')">How is home loan EMI calculated?</div><div class="faq-answer">Home loan EMI uses the formula: EMI = P × r × (1+r)^n / ((1+r)^n – 1), where P is loan amount, r is monthly interest rate (annual ÷ 12 ÷ 100), and n is the total months. Home loans have rates from 8–10% with tenures up to 30 years in India. Our calculator shows the complete amortization with year-wise breakdown.</div></div>
+        <div class="faq-item"><div class="faq-question" onclick="this.parentElement.classList.toggle('open')">What is personal loan EMI and why is it higher?</div><div class="faq-answer">Personal loan EMI is typically higher than home or car loan EMI because personal loans are unsecured (no collateral). Interest rates range from 10–24%, and tenures are shorter (1–5 years). A ₹5 lakh personal loan at 14% for 3 years has an EMI of ₹17,094. Use our calculator to check affordability before applying.</div></div>
+        <div class="faq-item"><div class="faq-question" onclick="this.parentElement.classList.toggle('open')">Which loan type has the lowest EMI?</div><div class="faq-answer">Home loans generally have the lowest EMI because they offer the longest tenure (up to 30 years) and lowest rates (8–10%). For the same ₹10 lakh: Home loan EMI at 8.5%/20yr = ₹8,678; Car loan at 9%/5yr = ₹20,758; Personal loan at 14%/3yr = ₹34,178. Use our "Compare Loan Types" feature above to see exact numbers for your amounts.</div></div>
+        <div class="faq-item"><div class="faq-question" onclick="this.parentElement.classList.toggle('open')">Can I reduce my EMI by prepayment?</div><div class="faq-answer">Yes! Making prepayments reduces your outstanding principal. You can either reduce your EMI or shorten tenure. For floating-rate home loans, RBI mandates zero prepayment penalty. On a ₹50L home loan at 8.5%/20yr, prepaying ₹5L in year 3 can save over ₹8L in interest. Enable "Early Loan Closure" above to see your exact savings.</div></div>
+        <div class="faq-item"><div class="faq-question" onclick="this.parentElement.classList.toggle('open')">What is bike loan EMI?</div><div class="faq-answer">Bike loan EMI is the monthly installment for two-wheeler loans. Rates range from 8–15% with tenures of 1–5 years. A ₹1.5L bike loan at 10%/3yr has an EMI of ₹4,840. Most NBFCs like Bajaj Finance and HDFC offer instant two-wheeler loan approval with minimal documentation.</div></div>
+        <div class="faq-item"><div class="faq-question" onclick="this.parentElement.classList.toggle('open')">How accurate is this EMI calculator for all loan types?</div><div class="faq-answer">This calculator uses the exact standard formula that all Indian banks and NBFCs use, regardless of loan type. The EMI calculation is the same whether it's a home loan, car loan, or personal loan — only the interest rate, amount, and tenure change. Our results are verified through 64 automated test cases.</div></div>
+      </section>
+
+      <!-- Internal Links -->
+      <section class="internal-links-section" id="internalLinks" aria-label="Related calculators"></section>
+    </article>
+  </main>
+
+  <script src="../js/shared.js"></script>
+  <script src="../js/emi-calculator.js"></script>
+  <script>createInternalLinks('internalLinks', 'emi');</script>
+</body>
+</html>

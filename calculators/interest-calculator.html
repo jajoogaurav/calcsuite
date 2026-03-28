@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interest Calculator India 2026 – Simple & Compound Interest Online</title>
+  <meta name="description" content="Calculate and compare simple vs compound interest online. Choose compounding frequency — daily, monthly, quarterly, annually. Free interest calculator for Indian deposits.">
+  <meta name="keywords" content="interest calculator, simple interest calculator, compound interest calculator India, interest comparison, deposit interest calculator, compounding frequency calculator">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://calcsuite.in/calculators/interest-calculator.html">
+  <link rel="stylesheet" href="../css/styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','GA_MEASUREMENT_ID');</script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebPage","name":"Interest Calculator India","url":"https://calcsuite.in/calculators/interest-calculator.html","isPartOf":{"@type":"WebSite","name":"CalcSuite","url":"https://calcsuite.in/"},"breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://calcsuite.in/"},{"@type":"ListItem","position":2,"name":"Interest Calculator","item":"https://calcsuite.in/calculators/interest-calculator.html"}]}}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"What is the difference between simple and compound interest?","acceptedAnswer":{"@type":"Answer","text":"Simple interest is calculated only on the original principal. Compound interest is calculated on the principal plus accumulated interest. Over time, compound interest grows significantly faster because you earn interest on your interest."}},
+    {"@type":"Question","name":"Which compounding frequency gives the highest returns?","acceptedAnswer":{"@type":"Answer","text":"Daily compounding gives the highest returns, followed by monthly, quarterly, semi-annually, and annually. However, the difference between daily and monthly compounding is usually very small. Most Indian banks compound quarterly for savings accounts and FDs."}},
+    {"@type":"Question","name":"How do Indian banks calculate interest?","acceptedAnswer":{"@type":"Answer","text":"Indian banks typically use quarterly compounding for savings accounts and FDs. The formula used is A = P(1 + r/n)^(nt), where P is principal, r is annual rate, n is compounding frequency, and t is time in years."}},
+    {"@type":"Question","name":"What is the power of compounding?","acceptedAnswer":{"@type":"Answer","text":"The power of compounding means your interest earns interest over time. Einstein reportedly called compound interest the eighth wonder of the world. A ₹1 lakh deposit at 8% grows to ₹1.47 lakh in 5 years with annual compounding, but to ₹1.49 lakh with quarterly compounding."}},
+    {"@type":"Question","name":"Is compound interest always better than simple interest?","acceptedAnswer":{"@type":"Answer","text":"For investments and deposits, compound interest is better as it grows your money faster. For loans, simple interest is better for the borrower as you pay less. Most Indian bank loans use compound interest (reducing balance method), while some personal finance products use simple interest."}}
+  ]}
+  </script>
+</head>
+<body>
+  <main class="calculator-page">
+    <article>
+      <h1>Interest Calculator – Compare Simple & Compound Interest</h1>
+      <p class="subtitle">Compare simple and compound interest with different compounding frequencies for Indian deposits and investments</p>
+      <div class="share-btn-container" id="shareButtons"></div>
+
+      <section class="calc-layout" aria-label="Interest calculator inputs and results">
+        <div class="input-panel">
+          <div class="input-group"><div class="input-label"><label for="principalInput">Principal Amount (₹)</label><input type="number" id="principalInput" value="500000" min="1000" max="100000000" step="1000"></div><input type="range" id="principalSlider" min="1000" max="100000000" value="500000" step="1000"></div>
+          <div class="input-group"><div class="input-label"><label for="rateInput">Interest Rate (% p.a.)</label><input type="number" id="rateInput" value="8" min="0.5" max="30" step="0.1"></div><input type="range" id="rateSlider" min="0.5" max="30" value="8" step="0.1"></div>
+          <div class="input-group"><div class="input-label"><label for="timeInput">Time Period (Years)</label><input type="number" id="timeInput" value="5" min="1" max="30" step="1"></div><input type="range" id="timeSlider" min="1" max="30" value="5" step="1"></div>
+          <div class="input-group"><div class="input-label"><label for="compoundFreqInput">Compounding Frequency</label><select class="select-input" id="compoundFreqInput"><option value="1">Annually</option><option value="2">Semi-Annually</option><option value="4" selected>Quarterly</option><option value="12">Monthly</option><option value="365">Daily</option></select></div></div>
+        </div>
+
+        <div class="result-panel">
+          <div class="result-item"><div class="result-label">Simple Interest</div><div class="result-value" id="simpleInterest" style="color:var(--accent-orange)">₹0</div></div>
+          <div class="result-item"><div class="result-label">Compound Interest</div><div class="result-value highlight" id="compoundInterest">₹0</div></div>
+          <div class="result-item"><div class="result-label">Maturity (Simple)</div><div class="result-value" id="maturitySimple" style="color:var(--accent-blue)">₹0</div></div>
+          <div class="result-item"><div class="result-label">Maturity (Compound)</div><div class="result-value" id="maturityCompound" style="color:var(--accent-green)">₹0</div></div>
+          <div class="chart-container"><canvas id="interestChart"></canvas></div>
+        </div>
+      </section>
+
+      <div class="ad-placeholder">📢 Advertisement Space — Google AdSense</div>
+
+      <section class="amort-section" aria-label="Year-wise comparison"><h2>Year-wise Comparison — Simple vs Compound Interest</h2><div class="table-wrapper" id="comparisonTable"></div></section>
+
+      <section class="seo-content" aria-label="About interest calculator">
+        <h2>Understanding Simple vs Compound Interest in India</h2>
+        <p><strong>Simple interest</strong> is calculated only on the original principal amount, while <strong>compound interest</strong> is calculated on the principal plus any accumulated interest. Over time, compound interest grows your money significantly faster because you earn "interest on interest."</p>
+
+        <h3>Simple Interest Formula</h3>
+        <div class="formula-box">Simple Interest = P × r × t</div>
+        <p>Where P is principal, r is annual rate (as decimal), and t is time in years.</p>
+
+        <h3>Compound Interest Formula</h3>
+        <div class="formula-box">A = P × (1 + r/n)<sup>(n×t)</sup></div>
+        <p>Where A is the maturity amount, P is principal, r is annual rate, n is compounding frequency per year, and t is time in years. Indian banks typically compound <strong>quarterly</strong> for savings accounts and Fixed Deposits.</p>
+
+        <h3>Why Compounding Frequency Matters</h3>
+        <p>Higher compounding frequency (daily > monthly > quarterly > annually) gives slightly higher returns. For example, ₹5 lakh at 8% for 5 years gives ₹7.00 lakh with annual compounding vs ₹7.43 lakh with quarterly compounding. Use our <a href="fd-calculator.html">FD Calculator</a> to compare bank FD returns, or try the <a href="sip-calculator.html">SIP Calculator</a> for mutual fund investments.</p>
+      </section>
+
+      <section class="faq-section" aria-label="FAQs">
+        <h2>Frequently Asked Questions – Interest Calculator</h2>
+        <div class="faq-item"><div class="faq-question" onclick="this.parentElement.classList.toggle('open')">What is the difference between simple and compound interest?</div><div class="faq-answer">Simple interest is calculated only on the original principal. Compound interest is calculated on principal + accumulated interest. Over 10 years, compound interest will give you significantly more returns than simple interest on the same amount.</div></div>
+        <div class="faq-item"><div class="faq-question" onclick="this.parentElement.classList.toggle('open')">Which compounding frequency gives the highest returns?</div><div class="faq-answer">Daily compounding gives the highest returns, followed by monthly, quarterly, semi-annually, and annually. However, the difference between daily and monthly is usually very small (a few hundred rupees on ₹5 lakh over 5 years).</div></div>
+        <div class="faq-item"><div class="faq-question" onclick="this.parentElement.classList.toggle('open')">How do Indian banks calculate interest?</div><div class="faq-answer">Most Indian banks use quarterly compounding for savings accounts and Fixed Deposits. Home loans use the reducing balance method (monthly compounding). RBI mandates quarterly compounding on savings accounts since April 2010.</div></div>
+        <div class="faq-item"><div class="faq-question" onclick="this.parentElement.classList.toggle('open')">What is the Rule of 72?</div><div class="faq-answer">The Rule of 72 is a quick way to estimate how long your money takes to double. Divide 72 by the interest rate. At 8%, your money doubles in approximately 72/8 = 9 years. At 12%, it doubles in about 6 years.</div></div>
+        <div class="faq-item"><div class="faq-question" onclick="this.parentElement.classList.toggle('open')">Is compound interest always better than simple interest?</div><div class="faq-answer">For investments and deposits, yes — compound interest grows your money faster. For loans, simple interest is better for the borrower. Most bank loans in India use compound interest (reducing balance), which is why our EMI Calculator is essential for planning loan repayments.</div></div>
+      </section>
+
+      <section class="internal-links-section" id="internalLinks" aria-label="Related calculators"></section>
+    </article>
+  </main>
+  <script src="../js/shared.js"></script>
+  <script src="../js/interest-calculator.js"></script>
+  <script>createInternalLinks('internalLinks', 'interest');</script>
+</body>
+</html>

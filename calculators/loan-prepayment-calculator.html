@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loan Prepayment Calculator India 2026 – Save Interest on Home Loan</title>
+  <meta name="description" content="Calculate how much interest and time you save by prepaying your home loan or personal loan. Free loan prepayment calculator with yearly, quarterly & one-time options.">
+  <meta name="keywords" content="loan prepayment calculator, home loan prepayment, save interest on loan, emi calculator india with prepayment, loan part payment calculator, prepayment benefit calculator">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://calcsuite.in/calculators/loan-prepayment-calculator.html">
+  <link rel="stylesheet" href="../css/styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','GA_MEASUREMENT_ID');</script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebPage","name":"Loan Prepayment Calculator India","url":"https://calcsuite.in/calculators/loan-prepayment-calculator.html","isPartOf":{"@type":"WebSite","name":"CalcSuite","url":"https://calcsuite.in/"},"breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://calcsuite.in/"},{"@type":"ListItem","position":2,"name":"Loan Prepayment Calculator","item":"https://calcsuite.in/calculators/loan-prepayment-calculator.html"}]}}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"What is loan prepayment?","acceptedAnswer":{"@type":"Answer","text":"Loan prepayment means paying an additional amount towards your loan principal over and above your regular EMI. This reduces the outstanding loan balance, which in turn reduces the total interest you pay over the loan tenure."}},
+    {"@type":"Question","name":"Is there a penalty for prepaying home loan in India?","acceptedAnswer":{"@type":"Answer","text":"As per RBI guidelines, there is no prepayment penalty on floating-rate home loans in India. For fixed-rate loans, banks may charge up to 2% of the prepaid amount. Always check with your lender before making prepayments."}},
+    {"@type":"Question","name":"How much interest can I save with prepayment?","acceptedAnswer":{"@type":"Answer","text":"The savings depend on your loan amount, interest rate, and prepayment amount. For example, making a yearly prepayment of ₹1 lakh on a ₹20 lakh home loan at 9% for 20 years can save you over ₹5 lakhs in interest and reduce your tenure by several years."}},
+    {"@type":"Question","name":"Should I prepay or invest the extra money?","acceptedAnswer":{"@type":"Answer","text":"If your loan interest rate is higher than your expected investment returns (after tax), prepayment is better. For home loans at 8-9%, where equity investments can give 12%+, investing may be better. However, prepayment offers guaranteed savings with zero risk."}},
+    {"@type":"Question","name":"Which is better — reducing EMI or reducing tenure?","acceptedAnswer":{"@type":"Answer","text":"Reducing tenure saves more interest overall because you pay for fewer months. Reducing EMI gives you more monthly cash flow. If your goal is to save maximum interest, choose tenure reduction. If you need lower monthly payments, choose EMI reduction."}}
+  ]}
+  </script>
+</head>
+<body>
+  <main class="calculator-page">
+    <article>
+      <h1>Loan Prepayment Calculator – Save Interest on Your Loan</h1>
+      <p class="subtitle">See how much interest and time you save by making extra payments on your home loan, car loan, or personal loan</p>
+      <div class="share-btn-container" id="shareButtons"></div>
+
+      <section class="calc-layout" aria-label="Loan prepayment inputs and results">
+        <div class="input-panel">
+          <div class="input-group"><div class="input-label"><label for="loanAmountInput">Loan Amount (₹)</label><input type="number" id="loanAmountInput" value="2000000" min="10000" max="100000000" step="10000"></div><input type="range" id="loanAmountSlider" min="10000" max="100000000" value="2000000" step="10000"></div>
+          <div class="input-group"><div class="input-label"><label for="interestRateInput">Interest Rate (% p.a.)</label><input type="number" id="interestRateInput" value="9" min="1" max="30" step="0.1"></div><input type="range" id="interestRateSlider" min="1" max="30" value="9" step="0.1"></div>
+          <div class="input-group"><div class="input-label"><label for="tenureInput">Loan Tenure (Years)</label><input type="number" id="tenureInput" value="20" min="1" max="30" step="1"></div><input type="range" id="tenureSlider" min="1" max="30" value="20" step="1"></div>
+          <div class="input-group"><div class="input-label"><label for="prepayAmountInput">Prepayment Amount (₹)</label><input type="number" id="prepayAmountInput" value="100000" min="1000" max="10000000" step="1000"></div><input type="range" id="prepayAmountSlider" min="1000" max="10000000" value="100000" step="1000"></div>
+          <div class="input-group"><div class="input-label"><label for="prepayFreqInput">Prepayment Frequency</label><select class="select-input" id="prepayFreqInput"><option value="yearly">Yearly</option><option value="half-yearly">Half-Yearly</option><option value="quarterly">Quarterly</option><option value="one-time">One-Time</option></select></div></div>
+        </div>
+
+        <div class="result-panel">
+          <div class="result-item"><div class="result-label">Original Total Interest</div><div class="result-value" id="origInterest" style="color:var(--accent-orange)">₹0</div></div>
+          <div class="result-item"><div class="result-label">New Total Interest</div><div class="result-value" id="newInterest" style="color:var(--accent-blue)">₹0</div></div>
+          <div class="result-item"><div class="result-label">Interest Saved</div><div class="result-value highlight" id="interestSaved">₹0</div></div>
+          <div class="result-item"><div class="result-label">Time Saved</div><div class="result-value" id="timeSaved" style="color:var(--accent-green)">0 months</div></div>
+          <div class="chart-container"><canvas id="prepayChart"></canvas></div>
+        </div>
+      </section>
+
+      <div class="ad-placeholder">📢 Advertisement Space — Google AdSense</div>
+
+      <section class="seo-content" aria-label="About loan prepayment">
+        <h2>What is Loan Prepayment? – Complete Guide for Indian Borrowers</h2>
+        <p><strong>Loan prepayment</strong> means paying an extra amount towards your loan principal beyond your regular EMI. This directly reduces your outstanding balance, which means less interest accrues in subsequent months. The result? You either finish your loan sooner, pay a lower EMI, or both — saving lakhs in interest over the loan tenure.</p>
+
+        <h3>How Prepayment Works</h3>
+        <p>When you make a prepayment, the extra amount goes entirely towards reducing the <strong>principal balance</strong>. Since interest is calculated on the outstanding principal each month, a lower balance means less interest. Our calculator supports four prepayment frequencies — yearly, half-yearly, quarterly, and one-time — so you can plan based on your financial situation.</p>
+
+        <h3>RBI Rules on Prepayment in India</h3>
+        <p>As per RBI guidelines, <strong>banks cannot charge prepayment penalty on floating-rate home loans</strong>. This makes it very attractive for home loan borrowers to make regular prepayments. For fixed-rate loans, banks may charge a nominal fee (usually 2% of the prepaid amount). Always check your loan agreement for specific terms.</p>
+
+        <h3>Should You Prepay or Invest?</h3>
+        <p>Compare your loan interest rate with expected investment returns. If your home loan is at 9% and you can earn 12%+ in equity mutual funds, investing might be better. But prepayment offers <strong>guaranteed, risk-free savings</strong>. Use our <a href="emi-calculator.html">EMI Calculator</a> to compare scenarios, or plan your investments with the <a href="sip-calculator.html">SIP Calculator</a>.</p>
+      </section>
+
+      <section class="faq-section" aria-label="FAQs">
+        <h2>Frequently Asked Questions – Loan Prepayment</h2>
+        <div class="faq-item"><div class="faq-question" onclick="this.parentElement.classList.toggle('open')">What is loan prepayment?</div><div class="faq-answer">Loan prepayment is paying extra towards your loan principal beyond the regular EMI. This reduces the outstanding balance, lowering total interest paid and potentially shortening your loan tenure. It's one of the most effective ways to save money on a loan.</div></div>
+        <div class="faq-item"><div class="faq-question" onclick="this.parentElement.classList.toggle('open')">Is there a penalty for prepaying home loan in India?</div><div class="faq-answer">No. As per RBI guidelines, floating-rate home loans in India have zero prepayment penalty. Fixed-rate loans may have a small penalty (up to 2%). Since most home loans in India are floating-rate, most borrowers can prepay freely.</div></div>
+        <div class="faq-item"><div class="faq-question" onclick="this.parentElement.classList.toggle('open')">How much interest can I save with prepayment?</div><div class="faq-answer">Savings depend on loan amount, rate, and prepayment frequency. For example, a yearly prepayment of ₹1 lakh on a ₹20 lakh loan at 9% for 20 years can save ₹5+ lakhs in interest and cut your tenure by 5+ years.</div></div>
+        <div class="faq-item"><div class="faq-question" onclick="this.parentElement.classList.toggle('open')">Should I prepay or invest the extra money?</div><div class="faq-answer">If your loan rate (say 9%) is higher than your after-tax investment returns, prepay. If you can earn more than your loan rate (e.g., 12% in equity SIPs), investing may be better. However, prepayment offers guaranteed savings with zero risk.</div></div>
+        <div class="faq-item"><div class="faq-question" onclick="this.parentElement.classList.toggle('open')">Which is better — reducing EMI or reducing tenure?</div><div class="faq-answer">Reducing tenure saves more total interest because you pay EMI for fewer months. Reducing EMI gives you more monthly cash flow flexibility. For maximum savings, choose tenure reduction after prepayment.</div></div>
+      </section>
+
+      <section class="internal-links-section" id="internalLinks" aria-label="Related calculators"></section>
+    </article>
+  </main>
+
+  <script src="../js/shared.js"></script>
+  <script src="../js/loan-prepayment-calculator.js"></script>
+  <script>createInternalLinks('internalLinks', 'prepay');</script>
+</body>
+</html>

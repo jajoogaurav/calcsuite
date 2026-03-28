@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FD Calculator India 2026 – Fixed Deposit Maturity & Interest Calculator</title>
+  <meta name="description" content="Calculate Fixed Deposit maturity amount and interest earned with quarterly compounding. Compare FD returns from SBI, HDFC, ICICI. Free FD calculator India 2026.">
+  <meta name="keywords" content="FD calculator India, fixed deposit calculator, FD interest calculator, FD maturity calculator, bank FD calculator, SBI FD calculator, HDFC FD rates">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://calcsuite.in/calculators/fd-calculator.html">
+  <link rel="stylesheet" href="../css/styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','GA_MEASUREMENT_ID');</script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebPage","name":"FD Calculator India 2026","url":"https://calcsuite.in/calculators/fd-calculator.html","isPartOf":{"@type":"WebSite","name":"CalcSuite","url":"https://calcsuite.in/"},"breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://calcsuite.in/"},{"@type":"ListItem","position":2,"name":"FD Calculator","item":"https://calcsuite.in/calculators/fd-calculator.html"}]}}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"What is a Fixed Deposit (FD)?","acceptedAnswer":{"@type":"Answer","text":"A Fixed Deposit is a financial instrument where you deposit a lump sum amount with a bank for a fixed tenure at a predetermined interest rate. FDs offer guaranteed returns and are one of the safest investment options in India. They are insured up to ₹5 lakh per bank under DICGC."}},
+    {"@type":"Question","name":"How is FD interest calculated in India?","acceptedAnswer":{"@type":"Answer","text":"Indian banks calculate FD interest using compound interest with quarterly compounding. The formula is A = P(1 + r/4)^(4t), where P is deposit amount, r is annual interest rate, and t is tenure in years. Some banks also offer monthly or annual compounding options."}},
+    {"@type":"Question","name":"What are current FD rates in India 2026?","acceptedAnswer":{"@type":"Answer","text":"As of 2026, major Indian banks offer FD rates between 5.5% to 7.5% for regular depositors. Senior citizens get an additional 0.25-0.50% premium. Check with SBI, HDFC, ICICI, and Axis Bank for the latest rates. Small finance banks may offer higher rates (up to 8.5%)."}},
+    {"@type":"Question","name":"Is FD interest taxable in India?","acceptedAnswer":{"@type":"Answer","text":"Yes, FD interest is taxable as per your income tax slab in India. If total FD interest exceeds ₹40,000 per year (₹50,000 for senior citizens), the bank deducts TDS at 10%. You can submit Form 15G/15H to avoid TDS if your total income is below the taxable limit."}},
+    {"@type":"Question","name":"Which is better — FD, SIP, or recurring deposit?","acceptedAnswer":{"@type":"Answer","text":"FDs offer guaranteed returns with zero risk but lower returns (6-7%). SIPs in equity mutual funds offer higher potential returns (12-15%) but with market risk. Recurring deposits are similar to FDs but with monthly contributions. Your choice depends on risk appetite and investment horizon."}}
+  ]}
+  </script>
+</head>
+<body>
+  <main class="calculator-page">
+    <article>
+      <h1>FD Calculator India – Calculate Fixed Deposit Returns Online</h1>
+      <p class="subtitle">Calculate your Fixed Deposit maturity amount and total interest earned with different compounding frequencies</p>
+      <div class="share-btn-container" id="shareButtons"></div>
+
+      <section class="calc-layout" aria-label="FD calculator inputs and results">
+        <div class="input-panel">
+          <div class="input-group"><div class="input-label"><label for="depositInput">Deposit Amount (₹)</label><input type="number" id="depositInput" value="500000" min="1000" max="100000000" step="1000"></div><input type="range" id="depositSlider" min="1000" max="100000000" value="500000" step="1000"></div>
+          <div class="input-group"><div class="input-label"><label for="fdRateInput">Interest Rate (% p.a.)</label><input type="number" id="fdRateInput" value="7" min="1" max="15" step="0.1"></div><input type="range" id="fdRateSlider" min="1" max="15" value="7" step="0.1"></div>
+          <div class="input-group"><div class="input-label"><label for="fdTenureInput">Tenure (Years)</label><input type="number" id="fdTenureInput" value="5" min="1" max="20" step="1"></div><input type="range" id="fdTenureSlider" min="1" max="20" value="5" step="1"></div>
+          <div class="input-group"><div class="input-label"><label for="fdCompoundInput">Compounding Frequency</label><select class="select-input" id="fdCompoundInput"><option value="1">Annually</option><option value="2">Semi-Annually</option><option value="4" selected>Quarterly</option><option value="12">Monthly</option></select></div></div>
+        </div>
+
+        <div class="result-panel">
+          <div class="result-item"><div class="result-label">Deposit Amount</div><div class="result-value" id="fdDeposit" style="color:var(--accent-blue)">₹0</div></div>
+          <div class="result-item"><div class="result-label">Total Interest Earned</div><div class="result-value" id="fdInterest" style="color:var(--accent-green)">₹0</div></div>
+          <div class="result-item"><div class="result-label">Maturity Amount</div><div class="result-value highlight" id="fdMaturity">₹0</div></div>
+          <div class="chart-container"><canvas id="fdChart"></canvas></div>
+        </div>
+      </section>
+
+      <div class="ad-placeholder">📢 Advertisement Space — Google AdSense</div>
+
+      <section class="amort-section" aria-label="Year-wise FD growth"><h2>Year-wise FD Growth Table</h2><div class="table-wrapper" id="fdGrowthTable"></div></section>
+
+      <section class="seo-content" aria-label="About FD calculator">
+        <h2>What is a Fixed Deposit (FD)? – Complete Guide for Indian Investors</h2>
+        <p>A <strong>Fixed Deposit (FD)</strong> is one of the safest and most popular investment options in India. You deposit a lump sum amount with a bank for a fixed tenure (ranging from 7 days to 10 years), and the bank pays you a predetermined interest rate. At maturity, you receive your principal plus accumulated interest.</p>
+
+        <h3>How FD Interest is Calculated</h3>
+        <p>Indian banks calculate FD interest using the compound interest formula with quarterly compounding:</p>
+        <div class="formula-box">Maturity = P × (1 + r/n)<sup>(n×t)</sup></div>
+        <p>Where P is the deposit amount, r is the annual interest rate, n is the compounding frequency (4 for quarterly), and t is tenure in years. For example, ₹5 lakh at 7% for 5 years with quarterly compounding gives a maturity amount of approximately ₹7.07 lakh.</p>
+
+        <h3>FD Rates in India 2026</h3>
+        <p>Major banks currently offer FD rates in the range of <strong>5.5% to 7.5%</strong> for regular depositors. Senior citizens receive an additional premium of 0.25% to 0.50%. Banks like SBI, HDFC, ICICI, Axis, and PNB have competitive rates, while small finance banks like AU Bank and Ujjivan may offer up to 8.5%.</p>
+
+        <h3>Tax on FD Interest</h3>
+        <p>FD interest is fully taxable as per your income tax slab. Banks deduct <strong>TDS at 10%</strong> if your annual FD interest exceeds ₹40,000 (₹50,000 for senior citizens). To avoid FD tax, consider tax-saving FDs under Section 80C (5-year lock-in, up to ₹1.5 lakh deduction).</p>
+
+        <p>Looking for higher returns? Try our <a href="sip-calculator.html">SIP Calculator</a> for mutual fund investments, or compare loan options with the <a href="emi-calculator.html">EMI Calculator</a>.</p>
+      </section>
+
+      <section class="faq-section" aria-label="FAQs">
+        <h2>Frequently Asked Questions – FD Calculator</h2>
+        <div class="faq-item"><div class="faq-question" onclick="this.parentElement.classList.toggle('open')">What is a Fixed Deposit (FD)?</div><div class="faq-answer">A Fixed Deposit is a bank product where you deposit money for a fixed period at a guaranteed interest rate. FDs are one of the safest investments in India, insured up to ₹5 lakh under DICGC. They offer higher returns than savings accounts.</div></div>
+        <div class="faq-item"><div class="faq-question" onclick="this.parentElement.classList.toggle('open')">How is FD interest calculated in India?</div><div class="faq-answer">Indian banks use compound interest with quarterly compounding: A = P(1 + r/4)^(4t). Some banks offer monthly or annual compounding. Quarterly compounding is the most common and gives slightly higher returns than annual compounding.</div></div>
+        <div class="faq-item"><div class="faq-question" onclick="this.parentElement.classList.toggle('open')">What are current FD rates in India?</div><div class="faq-answer">As of 2026, major banks offer 5.5–7.5% for regular depositors and up to 8% for senior citizens. Small finance banks offer even higher rates (up to 8.5%). Always compare rates across banks before opening an FD.</div></div>
+        <div class="faq-item"><div class="faq-question" onclick="this.parentElement.classList.toggle('open')">Is FD interest taxable?</div><div class="faq-answer">Yes, FD interest is taxable under "Income from Other Sources" as per your tax slab. TDS is deducted at 10% if annual interest exceeds ₹40,000 (₹50,000 for seniors). Submit Form 15G/15H if your income is below the taxable limit.</div></div>
+        <div class="faq-item"><div class="faq-question" onclick="this.parentElement.classList.toggle('open')">Which is better — FD or SIP?</div><div class="faq-answer">FDs offer guaranteed 6-7% returns with zero risk. SIPs in equity mutual funds offer higher returns (12-15%) but with market risk. For short-term goals (1-3 years), FDs are better. For long-term (5+ years), SIPs can give much higher returns. Use our <a href="sip-calculator.html">SIP Calculator</a> to compare.</div></div>
+      </section>
+
+      <section class="internal-links-section" id="internalLinks" aria-label="Related calculators"></section>
+    </article>
+  </main>
+  <script src="../js/shared.js"></script>
+  <script src="../js/fd-calculator.js"></script>
+  <script>createInternalLinks('internalLinks', 'fd');</script>
+</body>
+</html>
